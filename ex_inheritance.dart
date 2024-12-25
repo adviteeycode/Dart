@@ -1,3 +1,5 @@
+import 'ex_mixins.dart';
+
 class Content {
   final String title;
   Content(this.title);
@@ -8,15 +10,15 @@ class Content {
   }
 }
 
-class Post extends Content {
+class Post extends Content with Like {
   Post(super.title);
 }
 
-class Reel extends Content {
+class Reel extends Content with Like {
   Reel(super.title);
 }
 
-class Story extends Content {
+class Story extends Content with Like {
   Story(super.title);
 }
 
@@ -25,7 +27,10 @@ void main() {
   var reel = Reel("Reel 1");
   var story = Story("Story 1");
 
-  print(post);
+  post.increment();
+  post.increment();
+  post.decrement();
+  print(post.likes());
   print(reel);
   print(story);
 }
