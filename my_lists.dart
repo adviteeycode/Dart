@@ -31,4 +31,14 @@ void main() {
   }
   print(longName);
   print(name);
+
+  // list of map
+  List<Map<String, int>> students = [       // List of maps
+    {"Abhi": 22},
+    {"Ravi": 23},
+    {"Aadarsh": 21}
+  ];
+  for (Map<String, int> student in students) {
+    print("${student.keys} : ${student.values}");
+  }
 }
