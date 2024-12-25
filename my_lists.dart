@@ -33,12 +33,18 @@ void main() {
   print(name);
 
   // list of map
-  List<Map<String, int>> students = [       // List of maps
-    {"Abhi": 22},
-    {"Ravi": 23},
-    {"Aadarsh": 21}
+  List<Map<String, dynamic>> students = [
+    // List of maps
+    {"Name": "Abhishek", "Age": 22},
+    {"Name": "Ravi", "Age": 23},
+    {"Name": "Aadarsh", "Age": 21}
   ];
-  for (Map<String, int> student in students) {
-    print("${student.keys} : ${student.values}");
+
+  // sorting map on the base of age in it
+  students.sort((a, b) => a["Age"].compareTo(b["Age"])); 
+
+  print(students[0].keys);
+  for (Map<String, dynamic> student in students) {
+    print(student.values);
   }
 }
