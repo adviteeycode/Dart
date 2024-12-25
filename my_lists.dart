@@ -7,6 +7,12 @@ void main() {
 
   List<int> newList = list.map((e) => e * e).toList(); // mapping of element
 
+  List<int> subList1 = list.sublist(0, (list.length ~/ 2));   // sublist1
+  List<int> subList2 = list.sublist((list.length ~/ 2));    // sublist2
+
+  print("SubList1: $subList1");
+  print("SubList2: $subList2");
+
   print(list);
   print(newList);
 }
