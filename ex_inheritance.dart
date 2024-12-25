@@ -1,27 +1,23 @@
-class Content {}
-
-class Post {
+class Content {
   final String title;
-  Post(this.title);
-  String publish() {
+  Content(this.title);
+
+  @override
+  String toString() {
     return title;
   }
 }
 
-class Reel {
-  final String title;
-  Reel(this.title);
-  String publish() {
-    return title;
-  }
+class Post extends Content {
+  Post(super.title);
 }
 
-class Story {
-  final String title;
-  Story(this.title);
-  String publish() {
-    return title;
-  }
+class Reel extends Content {
+  Reel(super.title);
+}
+
+class Story extends Content {
+  Story(super.title);
 }
 
 void main() {
@@ -29,7 +25,7 @@ void main() {
   var reel = Reel("Reel 1");
   var story = Story("Story 1");
 
-  print(post.publish());
-  print(reel.publish());
-  print(story.publish());
+  print(post);
+  print(reel);
+  print(story);
 }
